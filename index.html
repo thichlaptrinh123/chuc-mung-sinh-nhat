@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc Mừng Sinh Nhật</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: #fff;
+      font-family: 'Pacifico', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px #000;
+      animation: pulse 2s infinite;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 0.8;
+      animation: fall 4s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 CHÚC MỪNG SINH NHẬT SẾP THẮNG 🎉</h1>
+  <div class="message">
+    Chúc anh một tuổi mới<br>
+    Tràn đầy niềm vui – Hạnh phúc ngập tràn<br>
+    Công việc suôn sẻ – Thành công rực rỡ<br>
+    Và luôn được yêu thương mỗi ngày ❤️
+  </div>
+
+  <!-- Confetti -->
+  <script>
+    const colors = ["#FF5F6D", "#FFC371", "#4ECDC4", "#556270", "#C44D58"];
+    for (let i = 0; i < 80; i++) {
+      let confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDelay = Math.random() * 4 + "s";
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(confetti);
+    }
+  </script>
+
+</body>
+</html>
